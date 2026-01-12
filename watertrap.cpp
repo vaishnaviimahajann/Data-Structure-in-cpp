@@ -18,14 +18,22 @@ void trap(int *height, int n) {
         rightmax[i] = max(rightmax[i + 1], height[i]);
     }
 
-    // PRINT
-    cout << "Leftmax: ";
+     cout << "Leftmax: ";
     for (int i = 0; i < n; i++) cout << leftmax[i] << " ";
 
     cout << "\nRightmax: ";
     for (int i = 0; i < n; i++) cout << rightmax[i] << " ";
 
-    cout << endl;
+    int watertrap = 0;
+
+    for (int i = 1; i < n - 1; i++) {
+        int currwater = min(leftmax[i], rightmax[i]) - height[i];
+        if (currwater > 0) {
+            watertrap += currwater;
+        }
+    }
+
+    cout << "Water trapped = " << watertrap << endl;
 }
 
 int main() {
