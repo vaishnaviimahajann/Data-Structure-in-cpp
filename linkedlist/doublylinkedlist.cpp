@@ -65,6 +65,20 @@ class list{
     }
     temp->next=newnode;
   }
+
+  //itreative search on linkedlist
+  int search(int key){
+    node* temp=head;
+    int index=0;
+    while(temp!=NULL){
+        if(temp->data==key){
+            return index;
+        }
+        temp=temp->next;
+        index++;
+    }
+    return -1; //key not found
+  }
    
 
    void printList(){
@@ -100,5 +114,6 @@ int main(){
         ll.printList();
         ll.insert_middle(10, 2);
         ll.printList();
+        cout << "Index of 10: " << ll.search(3) << endl;
     return 0;
 }
