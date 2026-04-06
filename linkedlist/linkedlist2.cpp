@@ -88,6 +88,31 @@ public:
             tail=temp;
     }
 
+    void pop_middle(int pos){
+        if(head == NULL){
+            cout<<"List is empty. Cannot pop from middle."<<endl;
+            return;
+        }
+        node* temp=head;
+        for(int i=1;i<pos-1;i++){
+            if(temp == NULL || temp->next == NULL){
+                cout<<"position is invalid"<<endl;
+                return;
+            }
+            temp=temp->next;
+        }
+
+        //temp is now at pos-1 i.e the node before the one we want to delete
+        node* toDelete = temp->next;
+        if(toDelete == NULL){
+            cout<<"position is invalid"<<endl;
+            return;
+        }
+        temp->next = toDelete->next; // Bypass the node to be deleted
+        toDelete->next = NULL; // Detach the node
+        delete toDelete; // Free memory
+    }
+
     void printList(){
         node* temp = head;
         while(temp != NULL){
@@ -109,6 +134,16 @@ int main(){
 
     ll.pop_front(1);
     ll.pop_back(5);
+    ll.printList();
+
+    ll.push_front(1);
+    ll.push_front(2);
+    ll.push_front(3);
+    ll.push_back(4);
+    ll.push_back(5);
+    ll.printList();
+
+    ll.pop_middle(3);
     ll.printList();
 
     return 0;
