@@ -131,6 +131,44 @@ class list{
         delete temp; // Free memory
     }
 
+   int pop_middle(int pos){
+    if(head == NULL){
+        cout << "List is empty\n";
+        return -1;
+    }
+
+    node* temp = head;
+
+    // move to position
+    for(int i = 1; i < pos && temp != NULL; i++){
+        temp = temp->next;
+    }
+
+    if(temp == NULL){
+        cout << "Invalid position\n";
+        return -1;
+    }
+
+    // if head
+    if(temp == head){
+        head = temp->next;
+        if(head != NULL) head->prev = NULL;
+    }
+    // if tail
+    else if(temp == tail){
+        tail = temp->prev;
+        if(tail != NULL) tail->next = NULL;
+    }
+    // middle
+    else{
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
+    }
+
+    delete temp;
+    return 0;
+}
+
       
 };
 
@@ -143,13 +181,13 @@ int main(){
         ll.push_front(1);
         ll.push_front(2);
         ll.push_front(3);
+        ll.push_front(4);
         ll.printList();
         ll.insert_middle(10, 2);
         ll.printList();
-        cout << "Index of 10: " << ll.search(3) << endl;
-        ll.pop_front();
-        ll.printList();
-        ll.pop_back();
+        cout << "Index of 10: " << ll.search(10) << endl;
+        ll.pop_middle(2);
+      
         ll.printList();
     return 0;
 }
