@@ -66,4 +66,3 @@ int main() {
     return 0;
 }
 
-//git commit -m "Postfix evaluation always starts from left to right because operands come before operator."
