@@ -17,7 +17,7 @@ class stack{
         ll.pop_front();
      }
 
-     t top(){
+     t top(){stack_linkedlist
         return ll.front();
      }
 
