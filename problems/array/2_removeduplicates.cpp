@@ -42,7 +42,7 @@ int removeduplicates(int arr[], int n){
 int main(){
     int arr[] = {1, 1, 2, 2, 3, 3, 4, 5};
     int n = sizeof(arr)/sizeof(arr[0]);
-    int k =     removeduplicates(arr, n);
+    int k =  removeduplicates(arr, n);
     
     cout << "Unique elements count: " << k << endl;
     cout << "Array: ";
