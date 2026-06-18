@@ -30,6 +30,15 @@ int main(){
     for(auto it : mp){
         cout << it.first << "" << it.second << endl;
     }
+
+    mp[5] = 5;  
+    mp[6]++;
+     cout << "After Insert:" << endl;
+    for(auto it : mp){
+        cout << it.first << "  " << it.second << endl;
+    }
+    
+    
     
     return 0;
 }
