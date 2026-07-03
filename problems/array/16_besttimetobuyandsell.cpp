@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 #include<climits>
 
@@ -11,6 +11,31 @@ int maxprofit(int arr[], int n ){
             
         }
 
+    }
+     return maxprofit;
+   
+}
+int main(){
+    int arr[] ={7, 1, 5, 3, 6, 4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<"max profit is"<<maxprofit(arr , n);
+
+    return 0;
+}*/
+#include<iostream>
+using namespace std;
+#include<climits>
+
+int maxprofit(int arr[], int n ){
+    int minprice = INT_MAX;
+    int maxprofit = 0;
+     for (int i = 0 ; i < n ; i ++){
+       if (minprice>arr[i]){
+        minprice = arr[i];
+       }
+        int profit = arr[i] - minprice;       
+        maxprofit = max(maxprofit, profit) ;   
+        
     }
      return maxprofit;
    
