@@ -34,6 +34,9 @@ int main(){
     cout << endl;
     
     return 0;
+
+    time complexity: O(nlogn + mlogm) where n and m are the sizes of the two arrays.
+    space complexity: O(n + m) for the set and the result vector.
 }*/
 
 //optimal solution
