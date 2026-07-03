@@ -32,7 +32,7 @@ int main(){
     }
 
     mp[5] = 5;  
-    mp[6]++;
+    mp[5]++;
      cout << "After Insert:" << endl;
     for(auto it : mp){
         cout << it.first << "  " << it.second << endl;
