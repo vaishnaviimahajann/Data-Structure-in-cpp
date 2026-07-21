@@ -12,6 +12,7 @@ int main(){
         sum=sum+(rem*rem*rem);
         n=n/10;
 
+        
     }
     if(original == sum){
         cout<<"Armstrong number";
