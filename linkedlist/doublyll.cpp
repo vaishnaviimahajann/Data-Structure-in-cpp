@@ -46,6 +46,26 @@ class list{
             tail = newnode;
         }
     }
+
+    void insertatpos(int val , int pos){
+        node* newnode = new node(val);
+        node*temp = head;
+        for(int i = 0 ; i < pos-1;i++){
+            if(temp == NULL){
+                cout<<"Invalid position"<<endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        newnode->next = temp->next;
+        newnode->prev = temp;
+        if(temp->next != NULL){
+            temp->next->prev = newnode;
+        }
+        temp->next = newnode;
+
+
+    }
     void showll(){
         node* temp = head;
         while(temp!=NULL){
