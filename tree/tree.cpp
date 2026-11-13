@@ -30,13 +30,24 @@ Node* buildtree(vector<int> preorder){
  return root;
 }
 
+void preorder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
 
 int main(){
     
-    vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
-    Node* root = buildtree(preorder);
-    cout<<root->data;
-    cout<<root->left->data;
-    cout<<root->right->data;
+    vector<int> preorderr = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+    Node* root = buildtree(preorderr);
+    cout<<root->data<<endl;
+    cout<<root->left->data<<endl;
+    cout<<root->right->data<<endl;
+    preorder(root);
     return 0;
+
 }
